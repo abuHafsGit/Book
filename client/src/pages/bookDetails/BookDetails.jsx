@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { useBookContext } from '../../context/BookContext';
 
 const BookDetails = () => {
     const params = useParams()
@@ -21,7 +22,7 @@ const BookDetails = () => {
         yearOfPublishing,
     } = expectedBook;
 
-
+    const { markedAsRead, handleMarkAsRead, wishList, handleWishList } = useBookContext();
     return (
         <div className="grid grid-cols-2 bg-base-100 shadow-sm container mx-auto my-8">
             <figure className="w-full flex items-center justify-center bg-gray-100 rounded-xl">
